@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+providers:
+  urls:
+    - http://provider1.com/api
+    - http://provider2.com/api
+
+retry:
+  maxAttempts: 3
+  backoff:
+    delay: 1000
+    multiplier: 2
+
+logging:
+  level:
+    com.smop: DEBUG
