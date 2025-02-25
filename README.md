@@ -10,3 +10,4 @@ A mobility provider calles SMOP (Smart Mobility Platform) for electric vehicles 
 --
 
 python -m venv /home/rob/Documents/python-env
+source /home/rob/Documents/python-env/bin/activate
