@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  authentication:
+    image: smop/authentication:latest
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - redis
+      - rabbitmq
+
+  routing:
+    image: smop/routing:latest
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - redis
+      - rabbitmq
+
+  payment:
+    image: smop/payment:latest
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - redis
+      - rabbitmq
+
+  notifications:
+    image: smop/notifications:latest
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - redis
+      - rabbitmq
+
+  provider-integration:
+    image: smop/provider-integration:latest
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - redis
+      - rabbitmq
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./kubernetes/monitoring/prometheus-config.yaml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
