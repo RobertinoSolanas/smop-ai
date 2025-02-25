@@ -1,13 +1,45 @@
-# smop-ai
-SMOP created by AI
+# SMOP - Smart Mobility Platform
 
+SMOP is a cloud-based microservice platform that integrates multiple electric vehicle providers (e-cars, e-scooters, e-cargobikes) to provide seamless urban mobility solutions.
 
-Ask me one question at a time so we can develop a thorough, step-by-step spec for this idea. Each question should build on my previous answers, and our end goal is to have a detailed specification I can hand off to a developer. Let’s do this iteratively and dig into every relevant detail. Remember, only one question at a time.
+## Project Structure
 
-Here’s the idea:
-A mobility provider calles SMOP (Smart Mobility Platform) for electric vehicles like e-cars, e-schoter, e-cargobikes as a greenfield project the cloud and microservice based. It servers as a platform to combine these external provider in the sense that a customer would not realize that he is using a combination of different electric vehicle providers to book a route in a city like berlin to travel from A to B. The payment process and all functionalities like plan a routing with multiple electric vehicles for a single route should be seamless for the customer."
+```
+smop/
+├── authentication/
+├── routing/
+├── provider_integration/
+├── payment/
+├── notifications/
+├── common/
+│   ├── config/
+│   └── logging/
+├── .github/
+│   └── workflows/
+└── README.md
+```
 
---
+## Getting Started
 
-python -m venv /home/rob/Documents/python-env
-source /home/rob/Documents/python-env/bin/activate
+1. Clone the repository
+2. Install dependencies using Maven
+3. Run the application
+
+```bash
+mvn clean install
+```
+
+## CI/CD Pipeline
+
+The project uses GitHub Actions for continuous integration. The pipeline:
+- Runs unit tests on every push
+- Builds the project
+- Checks code quality
+
+## Microservices
+
+- **Authentication**: Handles user authentication and authorization
+- **Routing**: Manages route planning and vehicle selection
+- **Provider Integration**: Interfaces with external EV providers
+- **Payment**: Processes payments and manages transactions
+- **Notifications**: Sends real-time updates to users
