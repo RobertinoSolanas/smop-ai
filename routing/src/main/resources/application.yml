@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+graphhopper:
+  datadir: ./routing-data
+  graph.location: berlin
+  osm-file: ./data/berlin-latest.osm.pbf
+
+logging:
+  level:
+    com.smop: DEBUG
