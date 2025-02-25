@@ -6,3 +6,7 @@ Ask me one question at a time so we can develop a thorough, step-by-step spec fo
 
 Here’s the idea:
 A mobility provider calles SMOP (Smart Mobility Platform) for electric vehicles like e-cars, e-schoter, e-cargobikes as a greenfield project the cloud and microservice based. It servers as a platform to combine these external provider in the sense that a customer would not realize that he is using a combination of different electric vehicle providers to book a route in a city like berlin to travel from A to B. The payment process and all functionalities like plan a routing with multiple electric vehicles for a single route should be seamless for the customer."
+
+--
+
+python -m venv /home/rob/Documents/python-env
