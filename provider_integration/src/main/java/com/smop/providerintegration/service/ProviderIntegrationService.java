@@ -19,7 +19,7 @@ public class ProviderIntegrationService {
     @Retryable(
         value = {RuntimeException.class},
         maxAttempts = 3,
-        backoff = @Backoff(delay = 1000, multiplier = 2)
+        backoff = @Backoff(delay = 1000, multiplier = 2))
     public List<ProviderVehicle> getAvailableVehicles(String providerUrl) {
         ProviderVehicle[] vehicles = restTemplate.getForObject(
             providerUrl + "/vehicles", 
