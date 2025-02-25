@@ -49,7 +49,7 @@ public class PaymentService {
                 .mapToLong(pricing -> 
                     (long) ((pricing.getBasePrice() * 100) + 
                            (pricing.getPerMinuteRate() * pricing.getDuration()) +
-                           (pricing.getPerKilometerRate() * pricing.getDistance() * 100))
+                           (pricing.getPerKilometerRate() * pricing.getDistance() * 100)))
                 .sum();
     }
 }
